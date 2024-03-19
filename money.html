@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <img src="Image/download.png">
+        <span class="navbar-brand text-light">Money Tracker</span>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active" id="welcomeNavItem" style="display: none;">
+                    <a class="nav-link text-light" href="#" id="welcomeMessageLink">Hello, [nama]!</a>
+                </li>
+                <li class="nav-item" id="loginNavItem">
+                    <a class="nav-link text-light" href="#" id="loginLink">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" id="mainLink" style="display: none;">Main</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" id="incomeLink" style="display: none;">Income</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" id="outcomeLink" style="display: none;">Outcome</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" id="aboutLink" style="display: none;">About me</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div id="loginPage">
+            <h2 class="text-center">Welcome to Money Tracker</h2>
+            <img src="Image/download.png">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control w-100" id="name" placeholder="Enter your name">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="mainPage" style="display: none;"> 
+        <div class="container mt-3 d-flex justify-content-between">
+            <div class="balance-container m">
+                <div id="balance" class="text-start p-3">
+                    <h2 class="mb-2"><b>Balance:</b></h2>
+                    <div class="balance-amount">
+                            <h3>Rp</h3>
+                            <h1>0</h1>
+                    </div>
+                </div>
+            </div>
+            <div id="transactionList">
+                <h4><b>Transaction List</b></h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Transaction Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionBody">
+                        <!-- Transaksi akan ditambahkan disini -->
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+    </div>
+    <div id="notification" class="notification"></div>
+    <div id="incomePage" style="display: none;">
+        <div class="container mt-5">
+            <h2 class="text-center"><b>Income Page</b></h2>
+            <form id="incomeForm">
+                <div class="form-group">
+                    <label for="incomeName">Transaction Name:</label>
+                    <input type="text" class="form-control" id="incomeName" placeholder="Enter transaction name">
+                </div>
+                <div class="form-group">
+                    <label for="incomeAmount">Amount:</label>
+                    <input type="number" class="form-control" id="incomeAmount" placeholder="Enter amount">
+                </div>
+                <div class="form-group">
+                    <label for="incomeCategory">Category:</label>
+                    <select class="form-control" id="incomeCategory">
+                        <option value="Food">Food</option>
+                        <option value="Main">Main</option>
+                        <option value="Education">Education</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="outcomePage" style="display: none;">
+        <div class="container mt-5">
+            <h2 class="text-center"><b>Outcome Page</b> </h2>
+            <form id="outcomeForm">
+                <div class="form-group">
+                    <label for="outcomeName">Transaction Name:</label>
+                    <input type="text" class="form-control" id="outcomeName" placeholder="Enter transaction name">
+                </div>
+                <div class="form-group">
+                    <label for="outcomeAmount">Amount:</label>
+                    <input type="number" class="form-control" id="outcomeAmount" placeholder="Enter amount">
+                </div>
+                <div class="form-group">
+                    <label for="outcomeCategory">Category:</label>
+                    <select class="form-control" id="outcomeCategory">
+                        <option value="Food">Food</option>
+                        <option value="Main">Main</option>
+                        <option value="Education">Education</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="aboutPage" style="display: none;">
+        <div class="container mt-5">
+            <h2 class="text-center"><b>About Me</b></h2>
+            <div class="row">
+                <div class="row-md-3">
+                    <img src="Image/IMG20230920101248.jpg">
+                    <p>Nama: Emanuel David Septiano Hermawan
+                        <br/>NIM: 00000101285
+                    </p>
+                </div>
+                <div class="row-md-4">
+                    <img src="Image/WhatsApp Image 2024-03-19 at 16.46.43_0abf3c08.jpg">
+                    <p>Nama: Ghiyats Nabil Rabanni
+                        <br/>NIM: 00000100863
+                    </p>
+                </div>
+                <div class="row-md-5">
+                    <img src="Image/WhatsApp Image 2024-03-19 at 17.15.23_6746a632.jpg">
+                    <p>Nama: Muhammad Abidzar Prayitno
+                        <br/>NIM: 00000100948
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var balance = 0;
+
+            // Menangani submit form login
+            $('#loginForm').submit(function(e) {
+                e.preventDefault();
+                var name = $('#name').val();
+                if (name.trim() !== '') {
+                    $('#loginPage').hide();
+                    $('#mainPage').show();
+                    $('#welcomeNavItem').show();
+                    $('#loginNavItem').hide();
+                    $('#welcomeMessageLink').text('Hello, ' + name + '!');
+                    $('#mainLink, #incomeLink, #outcomeLink, #aboutLink').show();
+                }
+            });
+
+            // Menangani klik tombol "Main"
+            $('#mainLink').click(function(e) {
+                e.preventDefault();
+                $('#mainPage').show();
+                $('#incomePage').hide();
+                $('#outcomePage').hide();
+                $('#aboutPage').hide();
+            });
+
+            // Menangani klik tombol "Income"
+            $('#incomeLink').click(function(e) {
+                e.preventDefault();
+                $('#mainPage').hide();
+                $('#incomePage').show();
+                $('#outcomePage').hide();
+                $('#aboutPage').hide();
+            });
+            
+            // Menangani klik tombol "Outcome"
+            $('#outcomeLink').click(function(e) {
+                e.preventDefault();
+                $('#mainPage').hide();
+                $('#incomePage').hide();
+                $('#outcomePage').show();
+                $('#aboutPage').hide();
+            });
+
+            // Menangani klik tombol "About Me"
+            $('#aboutLink').click(function(e) {
+                e.preventDefault();
+                $('#mainPage').hide();
+                $('#incomePage').hide();
+                $('#outcomePage').hide();
+                $('#aboutPage').show();
+            });
+
+            // Menangani submit form income
+            $('#incomeForm').submit(function(e) {
+                e.preventDefault();
+                var name = $('#incomeName').val();
+                var amount = $('#incomeAmount').val();
+                var category = $('#incomeCategory').val();
+                
+                if (name.trim() !== '' && amount.trim() !== '') {
+                    // Tambahkan transaksi ke Main Page
+                    addTransaction(name, parseFloat(amount), category);
+                    balance += parseFloat(amount);
+                    updateBalance();
+                    alert('Transaksi Sukses!');
+                } else {
+                    alert('Transaksi belum selesai, silakan lengkapi formulir!');
+                }
+            });
+
+             // Menangani submit form outcome
+             $('#outcomeForm').submit(function(e) {
+                e.preventDefault();
+                var name = $('#outcomeName').val();
+                var amount = $('#outcomeAmount').val();
+                var category = $('#outcomeCategory').val();
+                
+                if (name.trim() !== '' && amount.trim() !== '') {
+                    // Tambahkan transaksi ke Main Page
+                    addTransaction(name, parseFloat(amount), category);
+                    balance -= parseFloat(amount);
+                    updateBalance();
+                    alert('Transaksi Sukses!');
+                } else {
+                    alert('Transaksi belum selesai, silakan lengkapi formulir!');
+                }
+            });
+            
+            // Fungsi untuk menambahkan transaksi ke dalam tabel
+            function addTransaction(name, amount, category) {
+                var row = '<tr class="' + category.toLowerCase() + ' has-color">';
+                    row += '<td>' + name + '</td>';
+                    row += '<td>' + amount + '</td>';
+                    row += '<td>' + category + '</td>';
+                    row += '</tr>';
+                    var $row= $(row);
+                    
+                    // Menentukan warna baris berdasarkan kategori transaksi
+                    if (category === 'Education') {
+                        $row.addClass('income');
+                    } else if (category === 'Main') {
+                        $row.addClass('outcome');
+                    } else if (category === 'Food') {
+                        $row.addClass('outcome');
+                    } else if (category === 'Other') {
+                        $row.addClass('income');
+                    } else if(category === 'Shopping') {
+                        $row.addClass('outcome');
+                    }
+
+                    $('#transactionBody').append($row);
+                }
+
+                // Fungsi untuk memperbarui saldo
+                function updateBalance() {
+                    $('#balance h1').text(balance.toLocaleString('id-ID'));
+                }
+            });
+    </script>
+</body>
+</html>
